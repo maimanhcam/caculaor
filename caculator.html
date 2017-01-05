@@ -16,7 +16,13 @@
 		<td><button class="keys" >CE</button></td>
 		<td><button class="keys" onclick="clr()">C</button></td>
 		<td><button class="keys" onclick="bac(this)">xXx</button></td>
-		<td><button class="keys">%</button></td>
+		<td><button class="keys" onclick="chia()">1/x</button></td>
+	</tr>
+	<tr>
+		<td><button class="keys" onclick="bp()">x&sup2;</button></td>
+		<td><button class="keys"onclick="gt()">n&#33;</button></td>
+		<td><button class="keys" onclick="sqr()">&radic;</button></td>
+		<td><button class="operator" onclick="opera(this)" value="%">Mod</button></td>
 	</tr>
 	<tr>
 		<td><button  class="keys"onclick="press(this)" value="7">7</button></td>
@@ -46,7 +52,7 @@
 	</table>
 	
 	<script type="text/javascript">
-	var operators = ['+', '-', '*', '/'];
+	var operators = ['+', '-', '*', '/','%'];
 		function press(button)
 		{
 			document.getElementById("screen").value+=button.value ;
@@ -79,7 +85,32 @@
 			
 			
 		}
-		
+		function bp(x){
+
+			var x=eval(document.getElementById("screen").value);
+			document.getElementById("screen").value=x*x;
+		}
+		function sqr(x){
+			var x=eval(document.getElementById("screen").value);
+			document.getElementById("screen").value=Math.sqrt(x);
+		}
+		function gt(n){
+			var n=eval(document.getElementById("screen").value);
+			 if (n>0) {
+		        var a=1;
+		        for (var i = 1; i <=n; i++) {
+		            a*=i;
+		        }
+		       return document.getElementById("screen").value=a;
+		                }
+		        if (n==0) { return 0;}
+		        else document.getElementById("screen").value=" nhập lại";
+		}
+		function chia(n){
+			var n=eval(document.getElementById("screen").value);
+			document.getElementById("screen").value=1/n;
+		}
+
 
 	</script>
 </body>
