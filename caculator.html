@@ -92,7 +92,10 @@
 		}
 		function sqr(x){
 			var x=eval(document.getElementById("screen").value);
+			if(x>=0){
 			document.getElementById("screen").value=Math.sqrt(x);
+			}
+			else document.getElementById("screen").value="error"
 		}
 		function gt(n){
 			var n=eval(document.getElementById("screen").value);
@@ -104,7 +107,7 @@
 		       return document.getElementById("screen").value=a;
 		                }
 		        if (n==0) { return 0;}
-		        else document.getElementById("screen").value=" nhập lại";
+		        else document.getElementById("screen").value="error";
 		}
 		function chia(n){
 			var n=eval(document.getElementById("screen").value);
